@@ -1,0 +1,27 @@
+{
+    "name": "ROS iron",
+    "image": "ros:iron",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "true"
+        }
+    },
+    "runArgs": [
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "--privileged",
+        "-v",
+        "/dev:/dev"
+    ],
+    "containerEnv": {
+        "WORKSPACE_PATH": "${containerWorkspaceFolder}"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bierner.markdown-mermaid"
+            ]
+        }
+    },
+    "onCreateCommand": "cat .devcontainer/bashrc.post >> /root/.bashrc"
+}
